@@ -27,5 +27,9 @@
 	    
 	<bean id="dao" class="com.dao.SongDao">    
 		<property name="template" ref="jt"></property>    
-	</bean>     
+	</bean>  
+	<bean id="dao_podcast" class="com.dao.PodcastDao">    
+		<property name="template" ref="jt"></property>    
+	</bean> 
+   
 </beans>

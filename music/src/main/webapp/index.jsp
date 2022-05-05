@@ -1,128 +1,174 @@
 <html>
 <style>
-@import url('https://fonts.googleapis.com/css?family=Rubik:400,500&display=swap');
- * {
-	 box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap');
+*,
+ ::after,
+ ::before {
+    box-sizing: border-box;
 }
- body {
-	 font-family: 'Rubik', sans-serif;
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #2F303A;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    color: #fff;
+    min-height: 100vh;
 }
- .container {
-	 display: flex;
-	 height: 100vh;
+
+.flex-height-grow {
+    display: flex;
+    flex-direction: column;
 }
- .left {
-	 overflow: hidden;
-	 display: flex;
-	 flex-wrap: wrap;
-	 flex-direction: column;
-	 justify-content: center;
-	 animation-name: left;
-	 animation-duration: 1s;
-	 animation-fill-mode: both;
-	 animation-delay: 1s;
+
+
+/**********************************************************
+ global 
+ ***********************************************************/
+
+
+/* header */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
 }
- .right {
-	 flex: 1;
-	 background-color: black;
-	 transition: 1s;
-	 background-image: url(https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
-	 background-size: cover;
-	 background-repeat: no-repeat;
-	 background-position: center;
+
+a {
+    text-decoration: none;
+    color: #fff;
 }
- .header > h2 {
-	 margin: 0;
-	 color: #4f46a5;
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.25em;
 }
- .header > h4 {
-	 margin-top: 10px;
-	 font-weight: normal;
-	 font-size: 15px;
-	 color: rgba(0, 0, 0, .4);
+
+.logo h1 {
+    margin-left: 1rem;
+    margin: 0;
+    font-size: 2.5rem;
+    padding-left: 0.5rem;
+    background: linear-gradient(to bottom, #1762A7, #BC3A80);
+    -webkit-text-fill-color: transparent;
 }
- .form {
-	 max-width: 80%;
-	 display: flex;
-	 flex-direction: column;
+
+
+/* nav bar*/
+
+.main-nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
- .form > p {
-	 text-align: right;
+
+.main-nav a {
+    padding: 1rem;
 }
- .form > p > a {
-	 color: #000;
-	 font-size: 14px;
+
+.main-nav a:hover {
+    color: #adadad;
 }
- .form-field {
-	 height: 46px;
-	 padding: 0 16px;
-	 border: 2px solid #ddd;
-	 border-radius: 4px;
-	 font-family: 'Rubik', sans-serif;
-	 outline: 0;
-	 transition: 0.2s;
-	 margin-top: 20px;
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
 }
- .form-field:focus {
-	 border-color: #0f7ef1;
+
+.title {
+    font-weight: 500;
+    font-size: 3em;
+    margin-bottom: 0.6rem;
+    margin-top: 120;
 }
- .form > button {
-	 padding: 12px 10px;
-	 border: 0;
-	 background: #3a496a;
-	 border-radius: 3px;
-	 margin-top: 10px;
-	 color: #fff;
-	 letter-spacing: 1px;
-	 font-family: 'Rubik', sans-serif;
-	 cursor: pointer;
+
+.sub-title {
+    font-weight: 500;
+    font-size: 1.2em;
+    margin-top: 0;
+    margin-bottom: 2rem;
 }
- .animation {
-	 animation-name: move;
-	 animation-duration: 0.4s;
-	 animation-fill-mode: both;
-	 animation-delay: 2s;
+
+.btn {
+    background-color: #1762A7;
+    padding: 0.7rem 1.5rem;
+    border-radius: 0.6rem;
 }
- .a1 {
-	 animation-delay: 2s;
+
+
+/*************************************************************
+Home
+***************************************************************/
+
+.home-section {
+
+    justify-content: space-between;
+    flex-grow: 1;
 }
- .a2 {
-	 animation-delay: 2.1s;
+
+
+.home-page-circle-1 {
+    position: absolute;
+    width: 20vw;
+    height: 20vw;
+    border-radius: 50%;
+    bottom: 5vw;
+    left: 5vw;
+    background-color: rgba(188, 58, 128, 0.1);
+    z-index: -1;
 }
- .a3 {
-	 animation-delay: 2.2s;
+
+.home-page-circle-2 {
+    position: absolute;
+    width: 13vw;
+    height: 13vw;
+    border-radius: 50%;
+    top: 20vh;
+    left: 35vw;
+    background-color: rgb(23, 98, 167, 0.1);
 }
- .a4 {
-	 animation-delay: 2.3s;
+
+.home-page-circle-3 {
+    position: absolute;
+    overflow: hidden;
+    width: 45vw;
+    height: 45vw;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
 }
- .a5 {
-	 animation-delay: 2.4s;
+
+.home-page-circle-3::before {
+    content: '';
+    transform: translate(40%, 40%);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: rgb(52, 87, 178, .1);
 }
- .a6 {
-	 animation-delay: 2.5s;
-}
- @keyframes move {
-	 0% {
-		 opacity: 0;
-		 visibility: hidden;
-		 transform: translateY(-40px);
-	}
-	 100% {
-		 opacity: 1;
-		 visibility: visible;
-		 transform: translateY(0);
-	}
-}
- @keyframes left {
-	 0% {
-		 opacity: 0;
-		 width: 0;
-	}
-	 100% {
-		 opacity: 1;
-		 padding: 20px 40px;
-		 width: 440px;
-	}
+
+
+/***************************************************
+responsive
+****************************************************/
+
+@media screen and (max-width: 700px) {
+    .main-header {
+        flex-direction: column;
+    }
+    .home-section .image-section {
+        display: none;
+    }
+    .home-section {
+        justify-content: center;
+    }
 }
  
 </style>
@@ -130,22 +176,29 @@
 
 <body>
 
-<div class="container">
-  <div class="left">
-    <div class="header">
-    <h2 class="animation a1">PES1UG19CS466</h2><br>
-      <h2 class="animation a1">Shadify : Add Music</h2><br>
-    </div>
-    <form class="form" action="submit" method="post">
-      <input type="text" class="form-field animation a3" id="name" name="name" placeholder="Song Name" required>
-      <input type="text" class="form-field animation a3" id="duration" name="duration" placeholder="Duration" required>
-      <input type="text" class="form-field animation a4" id="artist" name="artist"placeholder="Artist" required>
-      <button class="animation a6" type="submit">Submit</button>
-    </form>
-  </div>
-  <div class="right"></div>
-</div>
-
+<header class="main-header">
+        <a href="#/" class="logo">
+            <img src="https://github.com/kyawmoehan/music-streaming-website/blob/master/images/logo.png?raw=true" alt="SoundWave logo">
+        </a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="song.jsp">Add Songs</a></li>
+                <li><a href="podcast.jsp">Add Podcasts</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="home-section">
+        <div class="image-section">
+            <div class="lady-image"></div>
+        </div>
+        <div class="tex-section" style="text-align:center">
+            <h1 class="title">Feel The Music</h1>
+            <p class="sub-title">#1 Music Platform</p>
+        </div>
+    </section>
+    <div class="home-page-circle-1"></div>
+    <div class="home-page-circle-2"></div>
+    <div class="home-page-circle-3"></div>
 
 </body>
 </html>
