@@ -138,7 +138,7 @@
     </div>
     <form class="form" action="submitPodcast" method="post">
       <input type="text" class="form-field animation a3" id="name" name="name" placeholder="Podcast Name" required>
-      <input type="text" class="form-field animation a3" id="date" name="date" placeholder="Date (DD/MM/YYYY)" required>
+      <input type="date" class="form-field animation a3" id="date" name="date" placeholder="Date (DD/MM/YYYY)" required>
       <input type="text" class="form-field animation a3" id="episodes" name="episodes" placeholder="Number of episodes" required>
       <input type="text" class="form-field animation a4" id="artist" name="artist"placeholder="Artist" required>
       <button class="animation a6" type="submit">Submit</button>

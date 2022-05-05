@@ -184,6 +184,7 @@ responsive
             <ul>
                 <li><a href="song.jsp">Add Songs</a></li>
                 <li><a href="podcast.jsp">Add Podcasts</a></li>
+                <li><a href="view.jsp">View All</a></li>
             </ul>
         </nav>
     </header>
@@ -193,7 +194,7 @@ responsive
         </div>
         <div class="tex-section" style="text-align:center">
             <h1 class="title">Feel The Music</h1>
-            <p class="sub-title">#1 Music Platform</p>
+            <p class="sub-title">Music Platform</p>
         </div>
     </section>
     <div class="home-page-circle-1"></div>
